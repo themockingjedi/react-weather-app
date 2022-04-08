@@ -1,0 +1,34 @@
+.search-button {
+  border-color: 1px solid white;
+  background-color: #0c44fa;
+  color: white;
+  margin-top: 50px;
+}
+
+.search-button:hover {
+  background-color: darkblue;
+}
+
+.reset-button {
+  border-color: 1px solid white;
+  background-color: #17ddf7;
+  color: black;
+  margin-top: 50px;
+}
+
+.reset-button:hover {
+  background-color: #0a6470;
+  color: white;
+}
+
+.search-spacer {
+  margin-top: 50px;
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 32px;
+    line-height: 2;
+    text-align: center;
+  }
+}

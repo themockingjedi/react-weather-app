@@ -1,0 +1,37 @@
+.title-spacer {
+  margin-top: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+img,
+li,
+footer,
+span {
+  color: aliceblue;
+}
+
+li {
+  list-style-type: none;
+  text-align: center;
+}
+
+.bottom-forecast-spacer {
+  margin-bottom: 50px;
+}
+
+.forecast-spacer {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 32px;
+    line-height: 2;
+    text-align: center;
+  }
+}
