@@ -5,10 +5,9 @@ import "./Search.css";
 
 export default function Search() {
   let [city, setCity] = useState("");
-  const [message, setMessage] = useState("");
+
   function updateCity(event) {
     event.preventDefault();
-    setMessage(<Weather city={city} />);
   }
   function changeCity(event) {
     event.preventDefault();
@@ -36,9 +35,6 @@ export default function Search() {
           </div>
         </div>
       </form>
-
-      <br />
-      <h3>{message}</h3>
     </div>
   );
 }

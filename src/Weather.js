@@ -5,21 +5,34 @@ import Search from "./Search";
 import "./Weather.css";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function setInfo(response) {
     setWeatherData({
+      ready: true,
       temperature: Math.round(response.data.main.temp),
       wind: 23,
       city: response.data.name,
       humidity: Math.round(response.data.main.humidity),
       icon: "https://cdn.vectorstock.com/i/1000x1000/53/35/sunny-weather-icon-vector-21015335.webp",
       description: response.data.weather[0].description,
+      feel: Math.round(response.data.main.feels_like),
     });
-    setReady(true);
   }
-  if (ready) {
+
+  function updateInfo(event) {
+    event.preventDefault();
+    setInfo();
+  }
+
+  let [city, setCity] = useState("");
+
+  function changeCity(event) {
+    event.preventDefault();
+    setCity(event.target.value);
+  }
+
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="row d-flex">
@@ -30,7 +43,26 @@ export default function Weather() {
             <h1 className="title-spacer">Wednesday, April 6</h1>
           </div>
           <div className="col-9 col-md-9 d-flex flex-column">
-            <Search />
+            <form onSubmit={updateInfo}>
+              <div className="row d-flex">
+                <div className="col-9 col-md-9">
+                  <input
+                    type="search"
+                    placeholder="Enter a city"
+                    autoComplete="off"
+                    onChange={changeCity}
+                    className="search-spacer form-control-lg form-control"
+                  />
+                </div>
+                <div className="col-3 col-md-3 d-flex">
+                  <input
+                    type="submit"
+                    value="Search"
+                    className="search-button btn-lg"
+                  />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
         <div className="title-spacer">
@@ -58,7 +90,7 @@ export default function Weather() {
             </div>
             <div className="col-6 col-md-6">
               <ul>
-                <li id="feels-like">Feels Like: 20°</li>
+                <li id="feels-like">Feels Like: {weatherData.feel}°</li>
                 <li className="li-bottom">Humidity: {weatherData.humidity}%</li>
               </ul>
             </div>
