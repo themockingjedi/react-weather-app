@@ -9,7 +9,6 @@ export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
 
   function setInfo(response) {
-    setReady(true);
     setWeatherData({
       temperature: Math.round(response.data.main.temp),
       wind: 23,
@@ -18,16 +17,19 @@ export default function Weather() {
       icon: "https://cdn.vectorstock.com/i/1000x1000/53/35/sunny-weather-icon-vector-21015335.webp",
       description: response.data.weather[0].description,
     });
+    setReady(true);
   }
   if (ready) {
     return (
       <div className="Weather">
-        <div className="row">
-          <div className="col-3 col-md-12">
+        <div className="row d-flex">
+          <div className="col-6 col-md-3">
             <h1 className="title-spacer">{weatherData.city}</h1>
-            <h2>Wednesday, April 6</h2>
           </div>
-          <div className="col-9 col-md-3">
+          <div className="col-6 col-md-6 flex-column">
+            <h1 className="title-spacer">Wednesday, April 6</h1>
+          </div>
+          <div className="col-9 col-md-9 d-flex flex-column">
             <Search />
           </div>
         </div>

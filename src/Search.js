@@ -17,8 +17,8 @@ export default function Search() {
   return (
     <div className="Search">
       <form onSubmit={updateCity}>
-        <div className="row">
-          <div className="col-8 col-md-8">
+        <div className="row d-flex">
+          <div className="col-9 col-md-9">
             <input
               type="search"
               placeholder="Enter a city"
@@ -27,15 +27,12 @@ export default function Search() {
               className="search-spacer form-control-lg form-control"
             />
           </div>
-          <div className="col-3 col-md-2">
+          <div className="col-3 col-md-3 d-flex">
             <input
               type="submit"
               value="Search"
               className="search-button btn-lg"
             />
-          </div>
-          <div className="col-2 col-md-2">
-            <button className="reset-button btn-lg">Reset</button>
           </div>
         </div>
       </form>
