@@ -1,0 +1,23 @@
+.title-spacer {
+  margin-top: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+canvas,
+li,
+footer,
+span {
+  color: aliceblue;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
