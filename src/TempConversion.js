@@ -17,7 +17,7 @@ export default function TempConversion(props) {
     return (
       <div className="TempConversion">
         <div className="temperature">{Math.round(props.fahrenheit)}</div>
-        <a href="#" className="unit">
+        <a href="/" className="unit">
           °F
         </a>{" "}
         |{" "}
