@@ -14,11 +14,8 @@ export default function WeatherInfo(props) {
               </div>
             </div>
             <div className="col-3 col-md-3">
-              <span className="float-left temperature">
-                {props.data.temperature}
-              </span>
               <span className="units">
-                <TempConversion />
+                <TempConversion fahrenheit={props.data.temperature} />
               </span>
             </div>
           </div>
