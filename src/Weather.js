@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import UpdateDate from "./UpdateDate";
 import WeatherInfo from "./WeatherInfo";
+import WeeklyForecast from "./WeeklyForecast";
 
 import "./Weather.css";
 
@@ -10,8 +11,10 @@ export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
 
   function setInfo(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       wind: 23,
       city: response.data.name,
@@ -20,6 +23,8 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       feel: Math.round(response.data.main.feels_like),
       date: new Date(response.data.dt * 1000),
+      sunrise: response.results.sunrise,
+      sunset: response.results.sunset,
     });
   }
 
@@ -27,6 +32,12 @@ export default function Weather(props) {
     const apiKey = "2d15662f0a607d166c07789453c7a23b";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(url).then(setInfo);
+
+    let lon = props.coordinates.lon;
+    let lat = props.coordinates.lat;
+    let apiUrl = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}&formatted=0`;
+
+    axios.get(apiUrl).then(setInfo);
   }
 
   function updateInfo(event) {
@@ -75,54 +86,11 @@ export default function Weather(props) {
           </div>
         </div>
         <WeatherInfo data={weatherData} />
-        <div className="row bottom-forecast-spacer">
-          <div className="col-2 col-md-2">
-            <ul>
-              <li>Monday</li>
-              <li>Sunny</li>
-              <li>50*</li>
-            </ul>
-          </div>
-          <div className="col-2 col-md-2">
-            <ul>
-              <li>Tuesday</li>
-              <li>Sunny</li>
-              <li>50*</li>
-            </ul>
-          </div>
-          <div className="col-2 col-md-2">
-            <ul>
-              <li>Wednesday</li>
-              <li>Sunny</li>
-              <li>50*</li>
-            </ul>
-          </div>
-          <div className="col-2 col-md-2">
-            <ul>
-              <li>Thursday</li>
-              <li>Sunny</li>
-              <li>50*</li>
-            </ul>
-          </div>
-          <div className="col-2 col-md-2">
-            <ul>
-              <li>Friday</li>
-              <li>Sunny</li>
-              <li>50*</li>
-            </ul>
-          </div>
-          <div className="col-2 col-md-2">
-            <ul>
-              <li>Saturday</li>
-              <li>Sunny</li>
-              <li>50*</li>
-            </ul>
-          </div>
-        </div>
+        <WeeklyForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
     search();
-    return "Loading...";
+    return <h1>"Loading..."</h1>;
   }
 }
