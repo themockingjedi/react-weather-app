@@ -1,6 +1,8 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import TempConversion from "./TempConversion";
+import Sunrise from "./Sunrise";
+import Sunset from "./Sunset";
 
 export default function WeatherInfo(props) {
   return (
@@ -23,9 +25,9 @@ export default function WeatherInfo(props) {
             <ul>
               <li id="feels-like">Feels Like: {props.data.feel}°</li>
               <li className="li-bottom">Humidity: {props.data.humidity}%</li>
-              <li>Sunrise: {props.data.sunrise}</li>
-              <li>Sunset: {props.data.sunset}</li>
             </ul>
+            <Sunrise date={props.data.sunrise} />
+            <Sunset date={props.data.sunset} />
           </div>
         </div>
       </div>

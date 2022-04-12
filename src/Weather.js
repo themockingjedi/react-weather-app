@@ -23,8 +23,8 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       feel: Math.round(response.data.main.feels_like),
       date: new Date(response.data.dt * 1000),
-      sunrise: response.results.sunrise,
-      sunset: response.results.sunset,
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
     });
   }
 
@@ -32,12 +32,6 @@ export default function Weather(props) {
     const apiKey = "2d15662f0a607d166c07789453c7a23b";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(url).then(setInfo);
-
-    let lon = props.coordinates.lon;
-    let lat = props.coordinates.lat;
-    let apiUrl = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}&formatted=0`;
-
-    axios.get(apiUrl).then(setInfo);
   }
 
   function updateInfo(event) {
