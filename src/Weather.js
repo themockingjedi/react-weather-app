@@ -52,7 +52,7 @@ export default function Weather(props) {
             <h1 className="title-spacer">{weatherData.city}</h1>
           </div>
           <div className="col-6 col-md-6 flex-column">
-            <h1 className="title-spacer">
+            <h1 className="title-spacer forecast-spacer">
               <UpdateDate date={weatherData.date} />
             </h1>
           </div>

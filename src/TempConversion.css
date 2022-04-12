@@ -1,0 +1,9 @@
+.temperature {
+  color: aliceblue;
+  font-size: 120px;
+}
+
+.units {
+  font-size: 35px;
+  padding-top: 40px;
+}

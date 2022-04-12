@@ -7,38 +7,36 @@ import Sunset from "./Sunset";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="title-spacer">
+      <div className="title-spacer container">
         <div className="row">
           <div className="col-3 col-md-3">
             <div className="clearfix">
-              <div className="float-left">
-                <WeatherIcon code={props.data.icon} size={200} />
+              <div className="text-center">
+                <WeatherIcon code={props.data.icon} size={250} />
+                <h3 className="text-capitalize">{props.data.description}</h3>
               </div>
             </div>
-            <div className="col-3 col-md-3">
-              <span className="units">
-                <TempConversion fahrenheit={props.data.temperature} />
-              </span>
+          </div>
+          <div className="col-3 col-md-3">
+            <TempConversion fahrenheit={props.data.temperature} />
+          </div>
+          <div className="col-3 col-md-3">
+            <div className="title-spacer">
+              <h3>Feels Like: {props.data.feel}°</h3>
+            </div>
+            <div className="title-spacer">
+              <h3>Humidity: {props.data.humidity}%</h3>
             </div>
           </div>
-          <div className="col-6 col-md-6">
-            <ul>
-              <li id="feels-like">Feels Like: {props.data.feel}°</li>
-              <li className="li-bottom">Humidity: {props.data.humidity}%</li>
-            </ul>
-            <Sunrise date={props.data.sunrise} />
-            <Sunset date={props.data.sunset} />
+          <div className="col-3 col-md-3">
+            <div className="title-spacer">
+              <Sunrise date={props.data.sunrise} />{" "}
+            </div>
+            <div className="title-spacer">
+              <Sunset date={props.data.sunset} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-3 col-md-3 forecast-spacer">
-          <ul>
-            <li className="text-capitalize">{props.data.description}</li>
-            <li className="li-bottom" id="date"></li>
-          </ul>
-        </div>
-        <div className="col-6"></div>
       </div>
     </div>
   );

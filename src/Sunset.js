@@ -14,9 +14,9 @@ export default function SunriseSet(props) {
 
   return (
     <div className="Sunset">
-      <p>
+      <h3>
         Sunset: {hour}:{minute} PM
-      </p>
+      </h3>
     </div>
   );
 }
