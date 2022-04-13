@@ -18,6 +18,14 @@ function App() {
             rel="noreferrer"
           >
             open-sourced on GitHub
+          </a>{" "}
+          and hosted{" "}
+          <a
+            href="https://deft-moonbeam-20bf9d.netlify.app/"
+            target="_blank"
+            ref="noopener noreferrer"
+          >
+            on Netlify
           </a>
         </footer>
       </div>

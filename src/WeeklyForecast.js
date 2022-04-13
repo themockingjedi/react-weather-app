@@ -1,4 +1,3 @@
-import WeatherIcon from "./WeatherIcon";
 import axios from "axios";
 
 import "./WeeklyForecast.css";
@@ -30,6 +29,8 @@ export default function WeeklyForecast(props) {
                   <ForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
