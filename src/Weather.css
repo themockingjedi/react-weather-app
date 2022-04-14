@@ -34,6 +34,13 @@ li {
   margin-bottom: 50px;
 }
 
+.search-button {
+  background: darkblue;
+  color: aliceblue;
+  border: 1px solid slategray;
+  border-radius: 10px 10px;
+}
+
 @media (max-width: 350px) {
   h1 {
     font-size: 32px;
@@ -43,5 +50,25 @@ li {
   h2 {
     line-height: 2;
     text-align: center;
+  }
+
+  .search-button {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 32px;
+    line-height: 2;
+    text-align: center;
+  }
+  h2 {
+    line-height: 2;
+    text-align: center;
+  }
+
+  .search-button {
+    margin-top: 15px;
   }
 }

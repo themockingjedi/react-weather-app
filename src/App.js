@@ -15,7 +15,7 @@ function App() {
           <a
             href="https://github.com/themockingjedi/react-weather-app"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             open-sourced on GitHub
           </a>{" "}
@@ -23,7 +23,7 @@ function App() {
           <a
             href="https://deft-moonbeam-20bf9d.netlify.app/"
             target="_blank"
-            ref="noopener noreferrer"
+            rel="noopener noreferrer"
           >
             on Netlify
           </a>

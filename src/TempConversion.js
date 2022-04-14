@@ -19,10 +19,10 @@ export default function TempConversion(props) {
       <div className="TempConversion">
         <div className="container">
           <div className="row">
-            <div className="col-6 col-md-6">
+            <div className="col-5 col-md-6">
               <div className="temperature">{Math.round(props.fahrenheit)}</div>
             </div>
-            <div className="col-6 col-md-6 units">
+            <div className="col-7 col-md-6 units">
               <a href="/">°F |</a>{" "}
               <a href="/" onClick={convertToCelcius}>
                 °C
@@ -38,10 +38,10 @@ export default function TempConversion(props) {
       <div className="TempConversion">
         <div className="container">
           <div className="row">
-            <div className="col-6 col-md-6">
+            <div className="col-5 col-md-6">
               <div className="temperature">{Math.round(celcius)}</div>{" "}
             </div>
-            <div className="col-6 col-md-6 units">
+            <div className="col-7 col-md-6 units">
               <a href="/" onClick={convertToFahrenheit}>
                 °C |
               </a>{" "}

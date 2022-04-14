@@ -7,3 +7,17 @@
   font-size: 35px;
   padding-top: 40px;
 }
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  color: aliceblue;
+}
+
+@media (max-width: 350px) {
+  .temperature {
+    font-size: 82px;
+  }
+}

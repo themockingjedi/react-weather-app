@@ -9,7 +9,7 @@ export default function WeatherInfo(props) {
     <div className="WeatherInfo">
       <div className="title-spacer container">
         <div className="row">
-          <div className="col-3 col-md-3">
+          <div className="col-12 col-md-3">
             <div className="clearfix">
               <div className="text-center">
                 <WeatherIcon code={props.data.icon} size={250} />
@@ -17,10 +17,10 @@ export default function WeatherInfo(props) {
               </div>
             </div>
           </div>
-          <div className="col-3 col-md-3">
+          <div className="col-12 col-md-3">
             <TempConversion fahrenheit={props.data.temperature} />
           </div>
-          <div className="col-3 col-md-3">
+          <div className="col-12 col-md-3">
             <div className="title-spacer">
               <h3>Feels Like: {props.data.feel}°</h3>
             </div>
@@ -28,7 +28,7 @@ export default function WeatherInfo(props) {
               <h3>Humidity: {props.data.humidity}%</h3>
             </div>
           </div>
-          <div className="col-3 col-md-3">
+          <div className="col-12 col-md-3">
             <div className="title-spacer">
               <Sunrise date={props.data.sunrise} />{" "}
             </div>

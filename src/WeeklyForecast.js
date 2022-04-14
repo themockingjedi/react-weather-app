@@ -20,7 +20,7 @@ export default function WeeklyForecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeeklyForecast">
+      <div className="WeeklyForecast top-spacer">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
